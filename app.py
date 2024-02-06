@@ -20,14 +20,6 @@ st.markdown("# **_PostNatal-APP_**")
 
 import base64 
 
-@st.cache_data
-def get_img_as_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-
-img = get_img_as_base64("C:/Users/Techa/Desktop/2023leave/mlflow/dsn/image.png")
 
 
 
@@ -41,12 +33,7 @@ background-position: top left;
 background-repeat: no-repeat;
 background-attachment: local;
 }}
-[data-testid="stSidebar"] > div:first-child {{
-background-image: url("data:image/png;base64,{img}");
-background-position: center; 
-background-repeat: no-repeat;
-background-attachment: fixed;
-}}
+
 
 [data-testid="stHeader"] {{
 background: rgba(0,0,0,0);
