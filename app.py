@@ -63,16 +63,19 @@ with open("knnmodel.pkl", "rb") as f:
     model = pickle.load(f)
 
 with st.form("my_form"):
+   st.markdown("""
+    0-No, 1=Others, 2=Yes
+""")
    st.write(f'**{"Fill In The Fileds  To Make prediction"}**')
    age = st.slider( f'**{"Please Select  Your Age"}**')
-   sad_fear = st.number_input(f'**{"Do You Feel Sad or Tearful"}**')
-   irritable = st.number_input(f'**{"Do You Feel Irritable towards baby & partner"}**')
-   sleep = st.number_input(f'**{"Do You Have Trouble sleeping at night"}**')
-   conc = st.number_input(f'**{"Do You Have Problems concentrating or making decision"}**')
-   eat = st.number_input(f'**{"Do You Overeact or Experience loss of appetite"}**')
-   guilt = st.number_input(f'**{"Do You Feel Guilt"}**')
-   bond= st.number_input(f'**{"Do You Have Problems of bonding with baby"}**')
-   suicide= st.number_input(f'**{"Do You Have Any Suicide attempt"}**')
+   sad_fear = st.number_input(f'**{"Do You Feel Sad or Tearful"}**', min_value=0, max_value=2)
+   irritable = st.number_input(f'**{"Do You Feel Irritable towards baby & partner"}**', min_value=0, max_value=2)
+   sleep = st.number_input(f'**{"Do You Have Trouble sleeping at night"}**', min_value=0, max_value=2)
+   conc = st.number_input(f'**{"Do You Have Problems concentrating or making decision"}**', min_value=0, max_value=2)
+   eat = st.number_input(f'**{"Do You Overeact or Experience loss of appetite"}**', min_value=0, max_value=2)
+   guilt = st.number_input(f'**{"Do You Feel Guilt"}**', min_value=0, max_value=2)
+   bond= st.number_input(f'**{"Do You Have Problems of bonding with baby"}**', min_value=0, max_value=2)
+   suicide= st.number_input(f'**{"Do You Have Any Suicide attempt"}**', min_value=0, max_value=2)
 
 
    test= np.array([age, sad_fear, irritable, sleep, conc, eat,guilt,bond, suicide]).reshape(1, -1)
