@@ -55,13 +55,15 @@ st.write(page_bg_img, unsafe_allow_html=True)
 #-------------Markdown
 
 
-st.markdown("*Postpartum anxiety* is **excessive worrying that occurafter** ***childbirth adpotion***.")
+st.markdown("*Postpartum anxiety* is **excessive worrying that occurafter** ***child birth or  adpotion***.")
 
 multi = '''
  People with postpartum anxiety may feel consumed with worry and constantly nervous or panicked. 
  If you or someone you know has symptoms of postpartum anxiety,
-   get help from a healthcare provider immediately. 
+ get help from a healthcare provider immediately. 
  Treatment for postpartum anxiety includes behavioral therapy or medication.
+
+ ### **The App Below will predict whether you are feeling anxious or Not**
 '''
 st.markdown(multi)
 
@@ -71,11 +73,13 @@ with open("knnmodel.pkl", "rb") as f:
     model = pickle.load(f)
 
 with st.form("my_form"):
+   
+   st.write(f'**{"Fill In The Fileds  To Make prediction"}**')
+   age = st.slider( f'**{"Please Select  Your Age"}**')
+
    st.markdown("""
     0-No, 1=Others, 2=Yes
 """)
-   st.write(f'**{"Fill In The Fileds  To Make prediction"}**')
-   age = st.slider( f'**{"Please Select  Your Age"}**')
    sad_fear = st.number_input(f'**{"Do You Feel Sad or Tearful"}**', min_value=0, max_value=2)
    irritable = st.number_input(f'**{"Do You Feel Irritable towards baby & partner"}**', min_value=0, max_value=2)
    sleep = st.number_input(f'**{"Do You Have Trouble sleeping at night"}**', min_value=0, max_value=2)
