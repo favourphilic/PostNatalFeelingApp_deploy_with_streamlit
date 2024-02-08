@@ -52,12 +52,20 @@ st.write(page_bg_img, unsafe_allow_html=True)
 
 
 #-----------
+#-------------Markdown
 
 
+st.markdown("*Postpartum anxiety* is **excessive worrying that occurafter** ***childbirth adpotion***.")
 
+multi = '''
+ People with postpartum anxiety may feel consumed with worry and constantly nervous or panicked. 
+ If you or someone you know has symptoms of postpartum anxiety,
+   get help from a healthcare provider immediately. 
+ Treatment for postpartum anxiety includes behavioral therapy or medication.
+'''
+st.markdown(multi)
 
-
-
+#---------------End of Markdown-
 #Load the model
 with open("knnmodel.pkl", "rb") as f:
     model = pickle.load(f)
