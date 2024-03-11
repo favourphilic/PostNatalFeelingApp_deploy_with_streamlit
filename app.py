@@ -18,34 +18,34 @@ st.markdown("# **_PostNatal-APP_**")
 #---------
 
 
-import base64 
+# import base64 
 
 
 
 
-page_bg_img =f"""
-<style>
-[data-testid="stAppViewContainer"] > .main {{
-background-image:url('https://images.pexels.com/photos/3875218/pexels-photo-3875218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-background-size: cover;
-background-size: 180%;
-background-position: top left;
-background-repeat: no-repeat;
-background-attachment: local;
-}}
+# page_bg_img =f"""
+# <style>
+# [data-testid="stAppViewContainer"] > .main {{
+# background-image:url('https://images.pexels.com/photos/3875218/pexels-photo-3875218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+# background-size: cover;
+# background-size: 180%;
+# background-position: top left;
+# background-repeat: no-repeat;
+# background-attachment: local;
+# }}
 
 
-[data-testid="stHeader"] {{
-background: rgba(0,0,0,0);
-}}
+# [data-testid="stHeader"] {{
+# background: rgba(0,0,0,0);
+# }}
 
-[data-testid="stToolbar"] {{
-right: 2rem;
-}}
-</style>
-"""
+# [data-testid="stToolbar"] {{
+# right: 2rem;
+# }}
+# </style>
+# """
 
-st.write(page_bg_img, unsafe_allow_html=True)
+# st.write(page_bg_img, unsafe_allow_html=True)
 
 
 
@@ -69,7 +69,7 @@ st.markdown(multi)
 
 #---------------End of Markdown-
 #Load the model
-with open("knnmodel.pkl", "rb") as f:
+with open("dtmodel.pkl", "rb") as f:
     model = pickle.load(f)
 
 with st.form("my_form"):
