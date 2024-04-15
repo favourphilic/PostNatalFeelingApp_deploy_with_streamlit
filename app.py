@@ -69,7 +69,7 @@ st.markdown(multi)
 
 #---------------End of Markdown-
 #Load the model
-with open("dtmodel.pkl", "rb") as f:
+with open("nnmodel.pkl", "rb") as f:
     model = pickle.load(f)
 
 with st.form("my_form"):
